@@ -36,6 +36,26 @@ public class Person {
         return growth;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public void setGrowth(int growth) {
+        this.growth = growth;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -46,4 +66,6 @@ public class Person {
                 ", growth=" + growth +
                 '}';
     }
+
+
 }
