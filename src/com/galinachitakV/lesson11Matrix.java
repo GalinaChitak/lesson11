@@ -10,6 +10,7 @@ public class lesson11Matrix {
             {7, 8, 9}
     };
 
+    
     public static void main(String[] args) {
        /* 2*. Написать класс для работы с матрицами (2-мерными массивами), методы:
         print(int[][] matrix) - печатает матрицу
