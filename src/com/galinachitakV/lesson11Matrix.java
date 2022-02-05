@@ -1,11 +1,13 @@
 package com.galinachitakV;
 
+import java.util.Arrays;
+
 public class lesson11Matrix {
 
     public static int[][] MATRIX = {
-            { 1, 2, 3 },
-            { 4, 5, 6 },
-            { 7, 8, 9 }
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
     };
 
     public static void main(String[] args) {
@@ -31,20 +33,24 @@ public class lesson11Matrix {
         System.out.println("mul");
         print(mul(MATRIX, 2));
         System.out.println();
-
-
+        System.out.println("toArray");
+        System.out.println(Arrays.toString(toArray(MATRIX)));
+        System.out.println();
+        System.out.println("max");
+        System.out.println(max(MATRIX));
 
 
     }
-    public static int[][] print(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + " ");
+
+    public static void print(int[][] matrix) {
+        for (int[] ints : matrix) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }
-        return matrix;
     }
+
     public static int[][] swapColumns(int[][] matrix, int x, int y) {
         for (int i = 0; i < matrix.length; i++) {
             int temp = matrix[i][x - 1];
@@ -55,6 +61,7 @@ public class lesson11Matrix {
         return matrix;
 
     }
+
     public static int[][] swapRows(int[][] matrix, int x, int y) {
         for (int i = 0; i < matrix[0].length; i++) {
             int temp = matrix[x - 1][i];
@@ -63,6 +70,7 @@ public class lesson11Matrix {
         }
         return matrix;
     }
+
     public static int[][] mul(int[][] matrix, int value) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -70,6 +78,26 @@ public class lesson11Matrix {
             }
         }
         return matrix;
+    }
+
+    public static int[] toArray(int[][] matrix) {
+        int[] toArray = new int[matrix.length * matrix[0].length];
+        for (int i = 0; i < matrix.length; i++) {
+            System.arraycopy(matrix[i], 0, toArray, i * matrix.length, matrix.length);
+        }
+        return toArray;
+    }
+
+    public static int max(int[][] matrix) {
+        int max = matrix[0][0];
+        for (int[] ints : matrix) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (ints[j] > max) {
+                    max = ints[j];
+                }
+            }
+        }
+        return max;
     }
 
 }
