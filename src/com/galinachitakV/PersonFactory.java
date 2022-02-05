@@ -10,7 +10,7 @@ public class PersonFactory {
 
     public static Random RANDOM = new Random();
     public static String[] NAME = {"Sara", "Oleg", "Galina", "Alex", "Viktor", "Max", "Dima"};
-    public static final String[] SURNAME = {"Chitak", "Chernyak", "Omelchuna", "Lykach", "Collorado",
+    public static String[] SURNAME = {"Chitak", "Chernyak", "Omelchuna", "Lykach", "Collorado",
             "Uvanov", "Chrek"};
 
 
